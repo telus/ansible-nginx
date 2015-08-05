@@ -3,7 +3,7 @@ dependencies:
   - role: telusdigital.apt-repository
     repository_key: "0xb9316a7bc7917b12"
     repository_url: "deb http://ppa.launchpad.net/chris-lea/nginx-devel/ubuntu {{ ansible_distribution_release }} main"
-  - role: telusdigital.fluentd
+  - role: kkwoker.fluentd
     fluentd_config_name: nginx
     fluentd_sources:
       - path: "{{ nginx_access_log_path }}"
