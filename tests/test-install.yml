@@ -27,3 +27,6 @@
     project: travis
     environment_tier: travis
     domain: travis
+    fluentd_elasticsearch_user: travis
+    fluentd_elasticsearch_password: travis
+    fluentd_config_name: travis
