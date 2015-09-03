@@ -7,6 +7,7 @@
 Tunables
 --------
 * `nginx_user` (string) - User to run nginx as
+* `nginx_group` (string) - Group to run nginx as
 * `nginx_worker_processes` (integer) - number of worker processes
 * `nginx_worker_connections` (integer) - maximum connections per worker
 * `nginx_runtime_root` (string) - Directory for runtime data
