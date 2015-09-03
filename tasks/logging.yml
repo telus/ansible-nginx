@@ -4,7 +4,7 @@
     state: directory
     path: "{{ nginx_log_root }}"
     owner: "{{ nginx_user }}"
-    group: wcdevelop
+    group: "{{ nginx_group }}"
     mode: 0775
   tags:
     - directory-structure

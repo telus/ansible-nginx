@@ -4,7 +4,7 @@
     state: directory
     path: "{{ nginx_runtime_root }}"
     owner: "{{ nginx_user }}"
-    group: wcadmin
+    group: "{{ nginx_group }}"
     mode: 0775
   tags:
     - directory-structure
@@ -30,7 +30,7 @@
     state: directory
     path: "{{ nginx_docroot }}"
     owner: "{{ nginx_user }}"
-    group: wcadmin
+    group: "{{ nginx_group }}"
     mode: 0775
   when: nginx_creates_docroot | bool
   tags:
@@ -42,7 +42,7 @@
     state: directory
     path: "{{ nginx_auth_root }}"
     owner: "{{ nginx_user }}"
-    group: wcadmin
+    group: "{{ nginx_group }}"
     mode: 0775
   when: nginx_auth_enabled | bool
   tags:
@@ -78,7 +78,7 @@
     src: etc/nginx/nginx.conf
     dest: /etc/nginx/nginx.conf
     owner: root
-    group: wcadmin
+    group: staff
     mode: 0664
   notify: Reload Service | nginx
   tags:
@@ -102,7 +102,7 @@
     src: etc/nginx/sites-available/site.conf
     dest: /etc/nginx/sites-available/site.conf
     owner: root
-    group: wcadmin
+    group: staff
     mode: 0664
   notify: Reload Service | nginx
   tags:

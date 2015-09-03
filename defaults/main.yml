@@ -1,5 +1,6 @@
 ---
 nginx_user: www-data
+nginx_group: www-data
 nginx_worker_processes: "{{ ansible_processor_vcpus }}"
 nginx_worker_connections: 4096
 nginx_runtime_root: "{{ runtime_root | default('/var/run') }}/nginx"
