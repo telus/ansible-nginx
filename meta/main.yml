@@ -7,7 +7,7 @@ dependencies:
     fluentd_config_name: nginx
     fluentd_sources:
       - path: "{{ nginx_access_log_path }}"
-        format: '/^(?<remote_addr>[\d\.]{7,15}) - (?<remote_user>[^ ]*) \[(?<time_iso8601>(?<date>[^T]*)T(?<time>[^+]*)\+(?<time_offset>[^\]]*)[^\]]*)\] "(?<request>(?<method>[^ ]*) (?<url>[^ ]*) (?<protocol>[^"]*))" (?<status>\d+) (?<bytes_sent>\d+) "(?<http_referer>[^"]*)" "(?<http_user_agent>[^"]*)" \| (?<request_time>\d.\d+) (?<pipe>[^ ]*) (?<connection_requests>[^ ]*) (?<gzip_ratio>[^ ]*) (?<ssl_protocol>[^\/]*)\/(?<ssl_cipher>.*)/'
+        format: '/^(?<remote_addr>[\d\.]{7,15}) - (?<remote_user>[^ ]*) \[(?<time_iso8601>(?<date>[^T]*)T(?<time>[^+]*)\+(?<time_offset>[^\]]*)[^\]]*)\] "(?<request>(?<method>[^ ]*) (?<url>[^ ]*) (?<protocol>[^"]*))" (?<status>\d+) (?<bytes_sent>\d+) "(?<http_referer>[^"]*)" "(?<http_user_agent>[^"]*)" \| (?<request_time>\d+.\d+) (?<pipe>[^ ]*) (?<connection_requests>[^ ]*) (?<gzip_ratio>[^ ]*) (?<ssl_protocol>[^\/]*)\/(?<ssl_cipher>.*)/'
         tag: reformed.elasticsearch.nginx.access
       - path: "{{ nginx_error_log_path }}"
         format: '/^(?<time>[^ ]+ [^ ]+) \[(?<log_level>[^]]*)\] (?<pid>\d*).(?<tid>[^:]*): (?<message>.*)/'
