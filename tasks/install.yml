@@ -3,8 +3,7 @@
   apt:
     state: latest
     pkg: "{{ item }}"
-  with_items:
-    - nginx-naxsi
+  with_items: "{{ nginx_distribution }}"
   tags:
     - nginx
     - software-installation
