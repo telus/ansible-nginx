@@ -22,8 +22,3 @@
     - role: telusdigital.logrotate
       logrotate_name: nginx
       logrotate_create_logs_with_owner: "{{ nginx_user }}"
-  vars:
-    system_role: travis
-    project: travis
-    environment_tier: travis
-    domain: travis
