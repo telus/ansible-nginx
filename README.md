@@ -3,10 +3,12 @@
 [nginx](http://nginx.org/) is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP proxy server
 
 [![Platforms](http://img.shields.io/badge/platforms-ubuntu-lightgrey.svg?style=flat)](#)
+[![Build Status](https://travis-ci.org/telusdigital/ansible-nginx.svg?branch=master)](https://travis-ci.org/telusdigital/ansible-nginx)
 
 Tunables
 --------
 * `nginx_user` (string) - User to run nginx as
+* `nginx_group` (string) - Group to run nginx as
 * `nginx_worker_processes` (integer) - number of worker processes
 * `nginx_worker_connections` (integer) - maximum connections per worker
 * `nginx_runtime_root` (string) - Directory for runtime data
