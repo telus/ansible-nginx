@@ -14,9 +14,6 @@ dependencies:
   #       tag: reformed.elasticsearch.nginx.error
   #   fluentd_plugins:
   #     - elasticsearch
-  # - role: telusdigital.logrotate
-  #   logrotate_name: nginx
-  #   logrotate_create_logs_with_owner: "{{ nginx_user }}"
   - role: telusdigital.logrotate
     logrotate_name: nginx
     logrotate_create_logs_with_owner: "{{ nginx_user }}"
