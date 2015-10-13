@@ -3,7 +3,8 @@ language: python
 python: "2.7"
 
 env:
-  - SITE=test-install.yml
+  - ROLE=test-install.yml
+  - ROLE=test-secure.yml
 
 before_install:
   - sudo apt-get update -qq
@@ -20,11 +21,11 @@ install:
 
 script:
   # Check the role/playbook's syntax.
-  - "ansible-playbook -i tests/inventory tests/$SITE --syntax-check"
+  - "ansible-playbook -i tests/inventory tests/$ROLE --syntax-check"
 
   # Run the role/playbook with ansible-playbook.
-  - "ansible-playbook -i tests/inventory tests/$SITE --connection=local --sudo"
-  - "ansible-playbook -i tests/inventory tests/$SITE --connection=local --sudo"
+  - "ansible-playbook -i tests/inventory tests/$ROLE --connection=local --sudo"
+  - "ansible-playbook -i tests/inventory tests/$ROLE --connection=local --sudo"
   - "sudo service nginx restart"
 
   # TODO - get the test working. Probably need to add a virtual host.
