@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - role: telusdigital.apt-repository
+      repository_key: "0xb9316a7bc7917b12"
+      repository_url: "deb http://ppa.launchpad.net/chris-lea/nginx-devel/ubuntu {{ ansible_distribution_release }} main"
+    - role: telusdigital.logrotate
+      logrotate_name: nginx
+      logrotate_create_logs_with_owner: "{{ nginx_user }}"

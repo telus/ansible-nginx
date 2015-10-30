@@ -59,9 +59,6 @@ nginx_client_max_body_size: 1m
 nginx_file_extension_blacklist: '\.sql(\.zip)?$'
 
 nginx_auth_enabled: no
-#generated_password_location: /data/www/auth
-#generated_password_username: digital
-#generated_password_salt: apr1
 nginx_auth_root: /data/www
 nginx_auth_location: /data/www/auth
 nginx_auth_username: digital
