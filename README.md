@@ -2,6 +2,7 @@
 
 [nginx](http://nginx.org/) is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP proxy server
 
+[![Build Status](https://travis-ci.org/telusdigital/ansible-nginx.svg?branch=master)](https://travis-ci.org/telusdigital/ansible-nginx)
 [![Platforms](http://img.shields.io/badge/platforms-ubuntu-lightgrey.svg?style=flat)](#)
 
 Tunables
