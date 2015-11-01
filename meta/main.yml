@@ -3,17 +3,6 @@ dependencies:
   - role: telusdigital.apt-repository
     repository_key: "0xb9316a7bc7917b12"
     repository_url: "deb http://ppa.launchpad.net/chris-lea/nginx-devel/ubuntu {{ ansible_distribution_release }} main"
-  # - role: telusdigital.fluentd
-  #   fluentd_config_name: nginx
-  #   fluentd_sources:
-  #     - path: "{{ nginx_access_log_path }}"
-  #       format: '/^(?<remote_addr>[\d\.]{7,15}) - (?<remote_user>[^ ]*) \[(?<time_iso8601>(?<date>[^T]*)T(?<time>[^+]*)\+(?<time_offset>[^\]]*)[^\]]*)\] "(?<request>(?<method>[^ ]*) (?<url>[^ ]*) (?<protocol>[^"]*))" (?<status>\d+) (?<bytes_sent>\d+) "(?<http_referer>[^"]*)" "(?<http_user_agent>[^"]*)" \| (?<request_time>\d.\d+) (?<pipe>[^ ]*) (?<connection_requests>[^ ]*) (?<gzip_ratio>[^ ]*) (?<ssl_protocol>[^\/]*)\/(?<ssl_cipher>.*)/'
-  #       tag: reformed.elasticsearch.nginx.access
-  #     - path: "{{ nginx_error_log_path }}"
-  #       format: '/^(?<time>[^ ]+ [^ ]+) \[(?<log_level>[^]]*)\] (?<pid>\d*).(?<tid>[^:]*): (?<message>.*)/'
-  #       tag: reformed.elasticsearch.nginx.error
-  #   fluentd_plugins:
-  #     - elasticsearch
   - role: telusdigital.logrotate
     logrotate_name: nginx
     logrotate_create_logs_with_owner: "{{ nginx_user }}"
