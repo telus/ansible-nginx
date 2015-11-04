@@ -49,6 +49,7 @@ Tunables
 * `nginx_auth_enabled` (boolean) - Enable HTTP Basic Auth?
 * `nginx_auth_location` (string) - Path to auth file?
 * `nginx_auth_username` (string) - Username for auth?
+* `nginx_auth_password` (string) - Plain text password. Store this in your vault.
 * `nginx_auth_salt` (string) - Salt for auth password?
 * `nginx_fastcgi_buffers` (string) - Buffer size for FastCGI requests
 * `nginx_context_proxy_enabled` (boolean) - Proxy requests for specific context paths?
