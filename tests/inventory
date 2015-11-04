@@ -1,0 +1,7 @@
+[local]
+localhost
+
+[local:vars]
+environment_tier=travis
+project=travis
+domain=travis.com
