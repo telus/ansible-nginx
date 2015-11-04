@@ -1,4 +1,5 @@
 ---
+nginx_port: 80
 nginx_user: www-data
 nginx_group: www-data
 nginx_worker_processes: "{{ ansible_processor_vcpus }}"
@@ -37,6 +38,7 @@ nginx_passenger_enabled: no
 nginx_php_enabled: no
 php_fpm_socket_path: "{{ runtime_root | default('/var/run') }}/php/fpm.sock"
 
+nginx_ssl_port: 443
 nginx_ssl_disabled: no
 nginx_ssl_enforced: no
 nginx_ssl_enabled: no
@@ -116,3 +118,10 @@ nginx_prerender_enabled: no
 nginx_restricted_paths_for_security:
   - /.git/
   - /uploads/
+
+nginx_configuration_name: site
+
+nginx_insecure_listener_enabled: yes
+
+nginx_fastcgi_script_names:
+  - /index.php

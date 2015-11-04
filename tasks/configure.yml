@@ -99,8 +99,8 @@
 
 - name: Upload Config | nginx | Standard
   template:
-    src: etc/nginx/sites-available/site.conf
-    dest: /etc/nginx/sites-available/site.conf
+    src: etc/nginx/sites-available/standard-configuration.conf
+    dest: "/etc/nginx/sites-available/{{ nginx_configuration_name }}.conf"
     owner: root
     group: staff
     mode: 0664
@@ -111,8 +111,8 @@
 - name: Enable Config | nginx | Standard
   file:
     state: link
-    src: /etc/nginx/sites-available/site.conf
-    dest: /etc/nginx/sites-enabled/site
+    src: "/etc/nginx/sites-available/{{ nginx_configuration_name }}.conf"
+    dest: "/etc/nginx/sites-enabled/{{ nginx_configuration_name }}"
   notify: Reload Service | nginx
   when: nginx_standard_configuration | bool
   tags:
