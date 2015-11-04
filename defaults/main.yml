@@ -64,6 +64,7 @@ nginx_auth_root: /data/www
 nginx_auth_location: /data/www/auth
 nginx_auth_username: digital
 nginx_auth_salt: apr1
+nginx_auth_password: "{% if nginx_auth_enabled %}{{ mandatory }}{% endif %}"
 
 nginx_fastcgi_buffers: 8k
 
