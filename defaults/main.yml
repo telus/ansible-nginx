@@ -48,11 +48,6 @@ nginx_ssl_key_path: /data/www/ssl.key
 nginx_ssl_should_degrade_security_to_accomodate_old_browsers: no
 nginx_ssl_redirect_paths_http_to_https: no
 
-nginx_cors_enabled: yes
-nginx_cors_whitelist_enabled: no
-nginx_cors_whitelist_protocol: 'https?'
-nginx_cors_whitelist_hosts: '[^/]*\.telus(webteam)?\.com'
-
 nginx_redirect_missing_files_to_root: no
 
 nginx_client_max_body_size: 1m
@@ -98,6 +93,11 @@ nginx_php_fastcgi_param_extras: []
 nginx_php_index_only: no
 
 nginx_static_asset_handling_enabled: yes
+
+nginx_cors_enabled: "{% if nginx_static_asset_handling_enabled %}yes{% else %}no{% endif %}"
+nginx_cors_whitelist_enabled: no
+nginx_cors_whitelist_protocol: 'https?'
+nginx_cors_whitelist_hosts: '[^/]*\.telus(webteam)?\.com'
 
 nginx_internal_paths_enabled: no
 nginx_internal_paths:
