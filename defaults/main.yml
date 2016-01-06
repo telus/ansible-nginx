@@ -93,6 +93,7 @@ nginx_php_fastcgi_param_extras: []
 nginx_php_index_only: no
 
 nginx_static_asset_handling_enabled: yes
+nginx_static_asset_handling_location: "{% if nginx_static_asset_handling_enabled %}\.(?:ico|css|js|gif|jpe?g|png|svgz?|webp|eot|ttf|woff|otf|pdf)${% endif %}"
 
 nginx_cors_enabled: "{% if nginx_static_asset_handling_enabled %}yes{% else %}no{% endif %}"
 nginx_cors_whitelist_enabled: no
