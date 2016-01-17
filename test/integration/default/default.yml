@@ -7,3 +7,5 @@
     # name of role to test
     - role: ansible-nginx
       nginx_auth_password: pass-doesnt-matter-here-silly
+      environment_tier: development
+
