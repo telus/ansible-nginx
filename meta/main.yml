@@ -6,6 +6,7 @@ dependencies:
   - role: telusdigital.logrotate
     logrotate_name: nginx
     logrotate_create_logs_with_owner: "{{ nginx_user }}"
+  - role: telusdigital.python
 galaxy_info:
   author: "Chris Olstrom"
   company: "TELUS digital"
