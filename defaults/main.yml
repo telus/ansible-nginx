@@ -116,7 +116,7 @@ nginx_prerender_enabled: no
 nginx_restricted_paths: []
 nginx_allow_access_to_restricted_paths_from_ips: []
 
-nginx_whitelist_ips_for_security: []
+nginx_whitelist_ips_for_security: no
 nginx_restricted_paths_for_security:
   - /.git/
   - /wp-admin
