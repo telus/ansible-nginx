@@ -121,6 +121,8 @@ nginx_restricted_paths_for_security:
   - /.git/
   - /wp-admin
 
+nginx_harden_for_wordpress: yes
+
 nginx_configuration_name: site
 
 nginx_insecure_listener_enabled: yes
