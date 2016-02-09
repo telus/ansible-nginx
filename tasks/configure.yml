@@ -32,7 +32,7 @@
     owner: "{{ nginx_user }}"
     group: "{{ nginx_group }}"
     mode: 0775
-  when: nginx_creates_docroot
+  when: nginx_creates_docroot | bool
   tags:
     - directory-structure
     - nginx
@@ -44,7 +44,7 @@
     owner: "{{ nginx_user }}"
     group: "{{ nginx_group }}"
     mode: 0775
-  when: nginx_auth_enabled
+  when: nginx_auth_enabled | bool
   tags:
     - directory-structure
     - nginx
@@ -55,7 +55,7 @@
   with_items:
     - "echo -n \"{{ nginx_auth_username }}:\" > {{ nginx_auth_location }}"
     - "openssl passwd -1 -salt {{ nginx_auth_salt }} {{ nginx_auth_password | mandatory }} >> {{ nginx_auth_location }}"
-  when: nginx_auth_enabled
+  when: nginx_auth_enabled | bool
   tags:
     - improves-security
     - nginx
@@ -114,7 +114,7 @@
     src: "/etc/nginx/sites-available/{{ nginx_configuration_name }}.conf"
     dest: "/etc/nginx/sites-enabled/{{ nginx_configuration_name }}"
   notify: Reload Service | nginx
-  when: nginx_standard_configuration
+  when: nginx_standard_configuration | bool
   tags:
     - configuration
     - enable-configuration
