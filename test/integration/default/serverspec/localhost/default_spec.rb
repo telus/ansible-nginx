@@ -79,4 +79,3 @@ describe 'ansible-nginx::default' do
   end
 
 end
-

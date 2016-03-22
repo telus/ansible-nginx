@@ -100,6 +100,20 @@ nginx_php_fastcgi_param_extras: []
 nginx_php_index_only: no
 
 nginx_static_asset_handling_enabled: yes
+nginx_static_asset_handling_extentions: 
+  - ico
+  - css
+  - js
+  - gif
+  - "jpe?g"
+  - png
+  - "svgz?"
+  - webp
+  - eot
+  - ttf
+  - woff
+  - otf
+  - pdf
 
 nginx_internal_paths_enabled: no
 nginx_internal_paths:
@@ -119,7 +133,10 @@ nginx_allow_access_to_restricted_paths_from_ips: []
 
 nginx_restricted_paths_for_security:
   - /.git/
-  - /wp-admin
+
+nginx_whitelist_ips_for_security: []
+
+nginx_harden_for_wordpress: yes
 
 nginx_configuration_name: site
 
