@@ -69,6 +69,7 @@ Tunables
 * `nginx_php_path_blacklist_try_files` (string) - try_files directive for blacklisted files.
 * `nginx_php_append_querystring` (string) - Append this to PHP querystrings.
 * `nginx_php_html_index` (string) - Allow HTML index files if PHP is enabled?
+* `nginx_php_fix_321` (boolean) - Enable the fix indicated in https://trac.nginx.org/nginx/ticket/321
 * `nginx_developer_environments_enabled` (boolean) - Map subdomains to project directories for users.
 * `nginx_developer_environment_regexp` (string) - Regular expression to match developer environments
 * `nginx_developer_environment_docroot` (string) - Docroot for developer environments

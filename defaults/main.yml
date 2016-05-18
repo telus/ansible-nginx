@@ -98,6 +98,7 @@ nginx_developer_environment_docroot: '/home/$user/www/$environment/docroot'
 
 nginx_php_fastcgi_param_extras: []
 nginx_php_index_only: no
+nginx_php_fix_321: yes
 
 nginx_static_asset_handling_enabled: yes
 nginx_static_asset_handling_extentions:
