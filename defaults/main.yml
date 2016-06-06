@@ -50,6 +50,7 @@ nginx_ssl_certificate_path: /data/www/ssl.crt
 nginx_ssl_key_path: /data/www/ssl.key
 nginx_ssl_should_degrade_security_to_accomodate_old_browsers: no
 nginx_ssl_redirect_paths_http_to_https: no
+nginx_ssl_protocol_detection: no
 
 nginx_cors_enabled: yes
 nginx_cors_whitelist_enabled: no
@@ -71,6 +72,7 @@ nginx_auth_salt: apr1
 nginx_fastcgi_buffers: 8k
 
 nginx_context_proxy_enabled: no
+nginx_context_proxy_pass_location_try_files_override: no
 nginx_context_proxy_host: 'http://www.telus.com'
 nginx_context_proxy_domain_equivalence: "telus.com {{ domain }}"
 nginx_context_proxy_paths:
@@ -99,6 +101,7 @@ nginx_developer_environment_docroot: '/home/$user/www/$environment/docroot'
 
 nginx_php_fastcgi_param_extras: []
 nginx_php_index_only: no
+nginx_php_fix_321: yes
 
 nginx_static_asset_handling_enabled: yes
 nginx_static_asset_handling_extentions:
@@ -140,6 +143,7 @@ nginx_whitelist_ips_for_security: []
 nginx_harden_for_wordpress: yes
 
 nginx_configuration_name: site
+nginx_configuration_type: standard-configuration
 
 nginx_insecure_listener_enabled: yes
 
@@ -147,3 +151,26 @@ nginx_fastcgi_script_names:
   - /index.php
 
 nginx_http2_enabled: no
+
+nginx_content_security_policy_report_only_enabled: no
+nginx_content_security_policy_report_only_default_src:
+  - "'self'"
+nginx_content_security_policy_report_only_script_src:
+  - "'self'"
+nginx_content_security_policy_report_only_img_src:
+  - "'self'"
+nginx_content_security_policy_report_only_style_src:
+  - "'self'"
+nginx_content_security_policy_report_only_font_src:
+  - "'self'"
+nginx_content_security_policy_report_only_form_src:
+  - "'self'"
+nginx_content_security_policy_report_only_report_uri: "/csp-report"
+nginx_content_security_policy_report_only_default_src_partial: "default-src {% for item in nginx_content_security_policy_report_only_default_src %}{{ item }} {% endfor %};"
+nginx_content_security_policy_report_only_script_src_partial: "script-src {% for item in nginx_content_security_policy_report_only_script_src %}{{ item }} {% endfor %};"
+nginx_content_security_policy_report_only_img_src_partial: "img-src {% for item in nginx_content_security_policy_report_only_img_src %}{{ item }} {% endfor %};"
+nginx_content_security_policy_report_only_style_src_partial: "style-src {% for item in nginx_content_security_policy_report_only_style_src %}{{ item }} {% endfor %};"
+nginx_content_security_policy_report_only_font_src_partial: "font-src {% for item in nginx_content_security_policy_report_only_font_src %}{{ item }} {% endfor %};"
+nginx_content_security_policy_report_only_form_src_partial: "form-src {% for item in nginx_content_security_policy_report_only_form_src %}{{ item }} {% endfor %};"
+nginx_content_security_policy_report_only_report_uri_partial: "report-uri {{ nginx_content_security_policy_report_only_report_uri }}"
+nginx_content_security_policy_report_only_line: "{{ nginx_content_security_policy_report_only_default_src_partial }} {{ nginx_content_security_policy_report_only_script_src_partial }} {{ nginx_content_security_policy_report_only_img_src_partial }} {{ nginx_content_security_policy_report_only_style_src_partial }} {{ nginx_content_security_policy_report_only_font_src_partial }} {{ nginx_content_security_policy_report_only_form_src_partial }} {{ nginx_content_security_policy_report_only_report_uri_partial }}"

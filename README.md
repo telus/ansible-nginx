@@ -1,6 +1,7 @@
 # ansible-nginx
 
 [nginx](http://nginx.org/) is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP proxy server
+
 [![Platforms](http://img.shields.io/badge/platforms-ubuntu-lightgrey.svg?style=flat)](#)
 [![Build Status](https://travis-ci.org/telusdigital/ansible-php.svg?branch=master)](https://travis-ci.org/telusdigital/ansible-php)
 
@@ -42,6 +43,7 @@ Tunables
 * `nginx_ssl_certificate_path` (string) - Path to SSL public key (certificate file)
 * `nginx_ssl_key_path` (string) - Path to SSL private key (key file)
 * `nginx_ssl_should_degrade_security_to_accomodate_old_browsers` (boolean) - Compromise security to support older browsers?
+* `nginx_ssl_protocol_detection` (boolean) - Write a cookie with the clients TLS version in it
 * `nginx_cors_enabled` (boolean) - Enable CORS support?
 * `nginx_cors_whitelist_enabled` (boolean) - Use whitelisting for CORS handling?
 * `nginx_cors_whitelist_protocol` (string) - Protocol to require for CORS?
@@ -56,6 +58,7 @@ Tunables
 * `nginx_auth_salt` (string) - Salt for auth password?
 * `nginx_fastcgi_buffers` (string) - Buffer size for FastCGI requests
 * `nginx_context_proxy_enabled` (boolean) - Proxy requests for specific context paths?
+* `nginx_context_proxy_pass_location_try_files_override` (boolean) - Disable default location try_files if proxy context_path conflicts?
 * `nginx_context_proxy_host` (string) - Upstream location for proxied requests
 * `nginx_context_proxy_domain_equivalence` (string) - Rewrite cookies for one domain to another, with proxied requests.
 * `nginx_context_proxy_paths` (list) - Paths that should be proxied
@@ -68,6 +71,7 @@ Tunables
 * `nginx_php_path_blacklist_try_files` (string) - try_files directive for blacklisted files.
 * `nginx_php_append_querystring` (string) - Append this to PHP querystrings.
 * `nginx_php_html_index` (string) - Allow HTML index files if PHP is enabled?
+* `nginx_php_fix_321` (boolean) - Enable the fix indicated in https://trac.nginx.org/nginx/ticket/321
 * `nginx_developer_environments_enabled` (boolean) - Map subdomains to project directories for users.
 * `nginx_developer_environment_regexp` (string) - Regular expression to match developer environments
 * `nginx_developer_environment_docroot` (string) - Docroot for developer environments
@@ -84,6 +88,7 @@ Tunables
 * `nginx_flag_social_crawlers` (boolean) - Flag social crawlers?
 * `nginx_prerender_enabled` (boolean) - Enable prerender.io support
 * `nginx_configuration_name` (string) - Name of the configuration file to use the standard configuration template
+* `nginx_configuration_type` (string) - Filename of the configuration file
 * `nginx_insecure_listener_enabled` (boolean) - Enable the insecure (http, non-ssl) listener
 * `nginx_http2_enabled` (boolean) - Enable http2 on the ssl connections
 * `nginx_pre_extended_configuration` (string) - complex project specific configuration (to be included just after https handshake standardl-configuration)

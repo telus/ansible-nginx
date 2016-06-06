@@ -99,7 +99,7 @@
 
 - name: Upload Config | nginx | Standard
   template:
-    src: etc/nginx/sites-available/standard-configuration.conf
+    src: "etc/nginx/sites-available/{{ nginx_configuration_type }}.conf"
     dest: "/etc/nginx/sites-available/{{ nginx_configuration_name }}.conf"
     owner: root
     group: staff
