@@ -112,7 +112,7 @@ nginx_static_asset_handling_extentions:
   - webp
   - eot
   - ttf
-  - woff
+  - "woff2?"
   - otf
   - pdf
 
