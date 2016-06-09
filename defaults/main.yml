@@ -171,3 +171,19 @@ nginx_content_security_policy_report_only_font_src_partial: "font-src {% for ite
 nginx_content_security_policy_report_only_form_src_partial: "form-src {% for item in nginx_content_security_policy_report_only_form_src %}{{ item }} {% endfor %};"
 nginx_content_security_policy_report_only_report_uri_partial: "report-uri {{ nginx_content_security_policy_report_only_report_uri }}"
 nginx_content_security_policy_report_only_line: "{{ nginx_content_security_policy_report_only_default_src_partial }} {{ nginx_content_security_policy_report_only_script_src_partial }} {{ nginx_content_security_policy_report_only_img_src_partial }} {{ nginx_content_security_policy_report_only_style_src_partial }} {{ nginx_content_security_policy_report_only_font_src_partial }} {{ nginx_content_security_policy_report_only_form_src_partial }} {{ nginx_content_security_policy_report_only_report_uri_partial }}"
+
+nginx_pagespeed_enabled: no
+nginx_pagespeed_modules:
+  - lazyload_images
+  - insert_dns_prefetch
+  - combine_javascript
+  - prioritize_critical_css
+  - canonicalize_javascript_libraries
+  - flatten_css_imports
+nginx_install_from_source: "{% if nginx_pagespeed_enabled %}yes{% else %}no{% endif %}"
+nginx_install_from_source_version: 1.11.1
+nginx_pagespeed_version: 1.11.33.2
+nginx_install_from_source_modules:
+  - "{% if nginx_pagespeed_enabled %}--add-module=/tmp/ngx_pagespeed-release-{{ nginx_pagespeed_version }}-beta{% endif %}"
+  - "--with-http_ssl_module"
+  - "--with-http_v2_module"

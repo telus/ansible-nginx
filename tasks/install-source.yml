@@ -1,0 +1,20 @@
+---
+- name: create nginx folder
+  file:
+    path: "/tmp/nginx-{{ nginx_install_from_source_version }}"
+    state: directory
+    mode: 0755
+
+- name: download nginx
+  unarchive:
+    src: "http://nginx.org/download/nginx-{{ nginx_install_from_source_version }}.tar.gz"
+    dest: /tmp
+    copy: no
+
+- name: Compile nginx
+  shell: "cd /tmp/nginx-{{ nginx_install_from_source_version }} && sudo {{ item }}"
+  with_items:
+    - ./configure {% for module in nginx_install_from_source_modules %}{{ module }} {% endfor %}
+    - make
+    - make install
+    - "mv /tmp/nginx-{{ nginx_install_from_source_version }}/objs/nginx /bin/"

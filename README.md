@@ -96,6 +96,8 @@ Tunables
 * `nginx_restricted_paths_for_security` (list) - List of paths to be blocked for security reasons (ideally playbooks dont override this)
 * `nginx_whitelist_ips_for_security` (list) - Whitelisted CIDR list to bypass security
 * `nginx_harden_for_wordpress` (boolean) - Harden configuration for wordpress to make it more secure
+* `nginx_pagespeed_enabled` (boolean) - Is google page speed enabled?
+* `nginx_pagespeed_modules` (list) - List of pagespeed modules to enable
 
 Dependencies
 ------------

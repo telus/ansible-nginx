@@ -1,21 +1,12 @@
 ---
-- name: Install Packages | apt
-  apt:
-    state: latest
-    pkg: "{{ item }}"
-  with_items: "{{ nginx_distribution }}"
-  tags:
-    - nginx
-    - software-installation
-    - using-apt
+- name: Include install from repository
+  include: install-repo.yml
+  when: not nginx_install_from_source
 
-- name: Install Packages | pip
-  pip:
-    state: latest
-    name: "{{ item }}"
-  with_items:
-    - ngxtop
-  tags:
-    - nginx
-    - software-installation
-    - using-pip
+- name: Include download pagespeed
+  include: download-pagespeed.yml
+  when: nginx_pagespeed_enabled
+
+- name: Include install from source
+  include: install-source.yml
+  when: nginx_install_from_source
