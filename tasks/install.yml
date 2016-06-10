@@ -1,12 +1,12 @@
 ---
 - name: Include install from repository
   include: install-repo.yml
-  when: not nginx_install_from_source
+  when: not nginx_install_from_source | bool
 
 - name: Include download pagespeed
   include: download-pagespeed.yml
-  when: nginx_pagespeed_enabled
+  when: nginx_pagespeed_enabled | bool
 
 - name: Include install from source
   include: install-source.yml
-  when: nginx_install_from_source
+  when: nginx_install_from_source | bool
