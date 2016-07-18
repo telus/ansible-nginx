@@ -85,6 +85,7 @@ nginx_redirects_for_browser_profile_and_locale_enabled: no
 nginx_php_virtual_context_path: ''
 
 nginx_php_path_blacklist_enabled: no
+nginx_php_path_blacklist_with_password_auth_generate: no
 nginx_php_path_blacklist_with_password: no
 nginx_php_path_blacklist_with_password_auth_location: /data/www/auth
 nginx_php_path_blacklist_regexp: /static
