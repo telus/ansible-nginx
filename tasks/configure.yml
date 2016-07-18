@@ -49,6 +49,7 @@
     - directory-structure
     - nginx
 
+# TODO: unify Generate Passwords
 - name: Generate password
   no_log: True
   shell: "{{ item }}"
