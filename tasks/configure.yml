@@ -49,6 +49,7 @@
     - directory-structure
     - nginx
 
+# TODO: unify Generate Passwords
 - name: Generate password
   no_log: True
   shell: "{{ item }}"
@@ -56,6 +57,17 @@
     - "echo -n \"{{ nginx_auth_username }}:\" > {{ nginx_auth_location }}"
     - "openssl passwd -1 -salt {{ nginx_auth_salt }} {% if nginx_auth_enabled | bool %}{{ nginx_auth_password | mandatory }}{% endif %} >> {{ nginx_auth_location }}"
   when: nginx_auth_enabled | bool
+  tags:
+    - improves-security
+    - nginx
+
+- name: Generate password (php/file specific blocks)
+  no_log: True
+  shell: "{{ item }}"
+  with_items:
+    - "echo -n \"{{ nginx_auth_username }}:\" > {{ nginx_php_path_blacklist_with_password_auth_location }}"
+    - "openssl passwd -1 -salt {{ nginx_auth_salt }} {{ nginx_auth_password | mandatory }} >> {{ nginx_php_path_blacklist_with_password_auth_location }}"
+  when: nginx_php_path_blacklist_with_password_auth_generate | bool
   tags:
     - improves-security
     - nginx
