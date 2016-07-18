@@ -72,7 +72,6 @@
     - improves-security
     - nginx
 
-
 - name: Configure | nginx | ulimit
   lineinfile:
     state: present
