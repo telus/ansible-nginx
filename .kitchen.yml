@@ -19,3 +19,4 @@ platforms:
 suites:
   # suites found at /test/integration/$test-name
   - name: default
+  - name: password-protect
