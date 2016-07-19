@@ -1,0 +1,10 @@
+---
+# host to test against
+- hosts: test-kitchen
+  remote_user: root
+
+  roles:
+    # name of role to test
+    - role: ansible-nginx
+      nginx_auth_password: really-bad-test-password
+      environment_tier: development
