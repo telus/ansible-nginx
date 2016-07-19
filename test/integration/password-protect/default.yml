@@ -6,5 +6,6 @@
   roles:
     # name of role to test
     - role: ansible-nginx
-      nginx_auth_password: really-bad-test-password
       environment_tier: development
+      nginx_auth_enabled: yes
+      nginx_auth_password: really-bad-test-password
