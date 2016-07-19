@@ -8,13 +8,4 @@
     - role: ansible-nginx
       nginx_auth_password: really-bad-test-password
       environment_tier: development
-- hosts: test-kitchen2
-  remote_user: root
-
-  roles:
-    # name of role to test
-    - role: ansible-nginx
-      nginx_auth_enabled: yes
-      nginx_auth_password: really-bad-test-password
-      environment_tier: development
 
