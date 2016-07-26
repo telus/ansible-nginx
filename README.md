@@ -38,6 +38,7 @@ Tunables
 * `nginx_ssl_disabled` (boolean) - Redirect HTTPS to HTTP
 * `nginx_ssl_enforced` (boolean) - Redirect HTTP to HTTPS
 * `nginx_ssl_enabled` (boolean) - Enable HTTPS support
+* `nginx_ssl_pass_tls_version` (boolean) - Pass the TLS version to the application?
 * `nginx_ssl_certificate_path` (string) - Path to SSL public key (certificate file)
 * `nginx_ssl_key_path` (string) - Path to SSL private key (key file)
 * `nginx_ssl_should_degrade_security_to_accomodate_old_browsers` (boolean) - Compromise security to support older browsers?
