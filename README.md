@@ -3,7 +3,7 @@
 [nginx](http://nginx.org/) is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP proxy server
 
 [![Platforms](http://img.shields.io/badge/platforms-ubuntu-lightgrey.svg?style=flat)](#)
-[![Build Status](https://travis-ci.org/telusdigital/ansible-php.svg?branch=master)](https://travis-ci.org/telusdigital/ansible-php)
+[![Build Status](https://travis-ci.org/telusdigital/ansible-nginx.svg?branch=master)](https://travis-ci.org/telusdigital/ansible-nginx)
 
 Tunables
 --------
@@ -70,6 +70,7 @@ Tunables
 * `nginx_php_path_blacklist_try_files` (string) - try_files directive for blacklisted files.
 * `nginx_php_append_querystring` (string) - Append this to PHP querystrings.
 * `nginx_php_html_index` (string) - Allow HTML index files if PHP is enabled?
+* `nginx_keyhole_markup_language_support_enabled` (boolean) - Is KML/KMZ required?
 * `nginx_php_fix_321` (boolean) - Enable the fix indicated in https://trac.nginx.org/nginx/ticket/321
 * `nginx_developer_environments_enabled` (boolean) - Map subdomains to project directories for users.
 * `nginx_developer_environment_regexp` (string) - Regular expression to match developer environments
