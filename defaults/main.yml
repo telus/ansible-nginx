@@ -45,7 +45,6 @@ nginx_ssl_enforced: no
 nginx_ssl_enabled: no
 nginx_ssl_certificate_path: /data/www/ssl.crt
 nginx_ssl_key_path: /data/www/ssl.key
-nginx_ssl_pass_tls_version: no
 nginx_ssl_should_degrade_security_to_accomodate_old_browsers: no
 nginx_ssl_redirect_paths_http_to_https: no
 nginx_ssl_protocol_detection: no
@@ -86,13 +85,14 @@ nginx_redirects_for_browser_profile_and_locale_enabled: no
 nginx_php_virtual_context_path: ''
 
 nginx_php_path_blacklist_enabled: no
-nginx_php_path_blacklist_with_password_auth_generate: no
 nginx_php_path_blacklist_with_password: no
 nginx_php_path_blacklist_with_password_auth_location: /data/www/auth
 nginx_php_path_blacklist_regexp: /static
 nginx_php_path_blacklist_try_files: '$uri $uri/'
 nginx_php_append_querystring: ''
 nginx_php_html_index: no
+
+nginx_keyhole_markup_language_support_enabled: no
 
 nginx_developer_environments_enabled: no
 nginx_developer_environment_regexp: '(?<environment>[\w-]+)\.(?<user>[\w-]+)\..*'
