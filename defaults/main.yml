@@ -181,6 +181,7 @@ nginx_content_security_policy_hsts_enabled: no
 
 nginx_xframe_headers_enabled: no
 nginx_xframe_option: 'DENY'
+
 nginx_pagespeed_enabled: no
 nginx_pagespeed_modules:
   - lazyload_images
