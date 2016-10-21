@@ -176,6 +176,8 @@ nginx_content_security_policy_report_only_form_src_partial: "form-src {% for ite
 nginx_content_security_policy_report_only_report_uri_partial: "report-uri {{ nginx_content_security_policy_report_only_report_uri }}"
 nginx_content_security_policy_report_only_line: "{{ nginx_content_security_policy_report_only_default_src_partial }} {{ nginx_content_security_policy_report_only_script_src_partial }} {{ nginx_content_security_policy_report_only_img_src_partial }} {{ nginx_content_security_policy_report_only_style_src_partial }} {{ nginx_content_security_policy_report_only_font_src_partial }} {{ nginx_content_security_policy_report_only_form_src_partial }} {{ nginx_content_security_policy_report_only_report_uri_partial }}"
 
+nginx_xframe_headers_enabled: no
+nginx_xframe_option: 'DENY'
 nginx_pagespeed_enabled: no
 nginx_pagespeed_modules:
   - lazyload_images
