@@ -178,6 +178,7 @@ nginx_content_security_policy_report_only_line: "{{ nginx_content_security_polic
 
 nginx_should_upgrade_insecure_requests: no
 nginx_http_strict_transport_security_enabled: no
+nginx_http_strict_transport_security_max_age: 86400
 
 nginx_xss_countermeasures_enabled: no
 nginx_xframe_option: 'DENY'
