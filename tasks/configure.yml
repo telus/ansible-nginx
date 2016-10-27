@@ -98,19 +98,6 @@
     - template-configuration
     - nginx
 
-- name: Upload Config | nginx
-  template:
-    src: etc/init.d/nginx
-    dest: /etc/init.d/nginx
-    owner: root
-    group: staff
-    mode: 0664
-  notify: Reload Service | nginx
-  tags:
-    - configuration
-    - template-configuration
-    - nginx
-
 - name: Disable Config | nginx | default
   file:
     state: absent
