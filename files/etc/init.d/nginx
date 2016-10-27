@@ -48,14 +48,14 @@ case "$1" in
                         # Set the ulimits
                         ulimit $ULIMIT
                 fi
-                start-stop-daemon --start --quiet --pidfile /data/run/nginx/nginx.pid \
+                start-stop-daemon --start --quiet --pidfile "{{ nginx_pidfile_path }}" \
                     --exec $DAEMON -- $DAEMON_OPTS || true
                 echo "$NAME."
                 ;;
 
         stop)
                 echo -n "Stopping $DESC: "
-                start-stop-daemon --stop --quiet --pidfile /data/run/nginx/nginx.pid \
+                start-stop-daemon --stop --quiet --pidfile "{{ nginx_pidfile_path }}" \
                     --exec $DAEMON || true
                 echo "$NAME."
                 ;;
@@ -67,7 +67,7 @@ case "$1" in
                     exit 0
                 fi
                 start-stop-daemon --stop --quiet --pidfile \
-                    /data/run/nginx/nginx.pid --exec $DAEMON || true
+                    "{{ nginx_pidfile_path }}" --exec $DAEMON || true
                 sleep 1
                 test_nginx_config
                 # Check if the ULIMIT is set in /etc/default/nginx
@@ -76,7 +76,7 @@ case "$1" in
                         ulimit $ULIMIT
                 fi
                 start-stop-daemon --start --quiet --pidfile \
-                    /data/run/nginx/nginx.pid --exec $DAEMON -- $DAEMON_OPTS || true
+                    "{{ nginx_pidfile_path }}" --exec $DAEMON -- $DAEMON_OPTS || true
                 echo "$NAME."
                 ;;
 
@@ -86,7 +86,7 @@ case "$1" in
                     log_end_msg 1 # Configuration error
                     exit 0
                 fi
-                start-stop-daemon --stop --signal HUP --quiet --pidfile /data/run/nginx/nginx.pid \
+                start-stop-daemon --stop --signal HUP --quiet --pidfile "{{ nginx_pidfile_path }}" \
                     --exec $DAEMON || true
                 echo "$NAME."
                 ;;
@@ -101,7 +101,7 @@ case "$1" in
                 ;;
 
         status)
-                status_of_proc -p /data/run/nginx/nginx.pid "$DAEMON" nginx && exit 0 || exit $?
+                status_of_proc -p "{{ nginx_pidfile_path }}" "$DAEMON" nginx && exit 0 || exit $?
                 ;;
         *)
                 echo "Usage: $NAME {start|stop|restart|reload|force-reload|status|configtest}" >&2
