@@ -133,7 +133,7 @@
     - nginx
 
 - name: Add Nginx init.d Script | nginx | Standard
-  copy:
+  template:
     src: etc/init.d/nginx
     dest: /etc/init.d/nginx
     owner: root
