@@ -40,8 +40,8 @@ describe 'ansible-nginx::configure' do
 
   describe file('/etc/nginx/nginx.conf') do
     its(:content) { should match /user www-data;/ }
-    its(:content) { should match /pid \/data\/run\/nginx\/nginx.pid;/ }
     its(:content) { should match /worker_connections 4096;/ }
+    its(:content) { should match /pid \/data\/run\/nginx\/nginx.pid;/ }
     its(:content) { should match /server_tokens off;/ }
     its(:content) { should match /header field./ }
     its(:content) { should match /gzip on;/ }
