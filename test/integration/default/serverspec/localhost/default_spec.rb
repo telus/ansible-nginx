@@ -13,17 +13,10 @@ describe 'ansible-nginx::install' do
 end
 
 describe 'ansible-nginx::configure' do
-
   # should not need bool() on vars
   # testing that this doesn't get created by default
   describe file('/data/www/auth') do
     it { should_not be_a_file }
-  end
-
-  describe file('/data/run/nginx') do
-    it { should be_directory }
-    it { should be_owned_by 'www-data' }
-    it { should be_grouped_into 'www-data' }
   end
 
   describe file('/etc/init.d/nginx') do
@@ -40,8 +33,8 @@ describe 'ansible-nginx::configure' do
 
   describe file('/etc/nginx/nginx.conf') do
     its(:content) { should match /user www-data;/ }
-    its(:content) { should match /pid \/data\/run\/nginx\/nginx.pid;/ }
     its(:content) { should match /worker_connections 4096;/ }
+    its(:content) { should match /pid \/data\/run\/nginx\/nginx.pid;/ }
     its(:content) { should match /server_tokens off;/ }
     its(:content) { should match /header field./ }
     its(:content) { should match /gzip on;/ }
@@ -55,6 +48,11 @@ describe 'ansible-nginx::configure' do
     its(:content) { should match /client_max_body_size 1m;/ }
   end
 
+  describe file('/data/run/nginx') do
+    it { should be_directory }
+    it { should be_owned_by 'www-data' }
+    it { should be_grouped_into 'www-data' }
+  end
 end
 
 describe 'ansible-nginx::logging' do
