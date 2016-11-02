@@ -13,6 +13,7 @@ galaxy_info:
   description: 'nginx is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP proxy server.'
   issue_tracker_url: 'https://github.com/telusdigital/ansible-nginx/issues'
   license: MIT
+  min_ansible_version: 1.9
   platforms:
     - name: Ubuntu
       versions:
