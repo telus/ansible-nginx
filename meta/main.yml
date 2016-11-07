@@ -8,10 +8,12 @@ dependencies:
     logrotate_create_logs_with_owner: "{{ nginx_user }}"
   - role: telusdigital.python
 galaxy_info:
-  author: "Chris Olstrom"
-  company: "TELUS digital"
-  description: "nginx is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP proxy server."
+  author: 'Chris Olstrom'
+  company: 'TELUS digital'
+  description: 'nginx is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP proxy server.'
+  issue_tracker_url: 'https://github.com/telusdigital/ansible-nginx/issues'
   license: MIT
+  min_ansible_version: 1.9
   platforms:
     - name: Ubuntu
       versions:
@@ -20,5 +22,5 @@ galaxy_info:
       - trusty
       - utopic
       - vivid
-  categories:
+  galaxy_tags:
     - web
