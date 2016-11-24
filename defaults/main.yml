@@ -132,6 +132,8 @@ nginx_localhost_authorization_required: no
 nginx_flag_social_crawlers: no
 
 nginx_prerender_enabled: no
+nginx_prerender_tryfiles_uri: "$uri"
+nginx_prerender_rewrite_regex: ".*"
 
 nginx_restricted_paths: []
 nginx_allow_access_to_restricted_paths_from_ips: []
