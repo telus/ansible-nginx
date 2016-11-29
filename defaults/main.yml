@@ -67,7 +67,8 @@ nginx_auth_location: /data/www/auth
 nginx_auth_username: digital
 nginx_auth_salt: apr1
 
-nginx_fastcgi_buffers: 8k
+nginx_fastcgi_buffers: '8 8k'
+nginx_fastcgi_buffer_size: 8k
 
 nginx_context_proxy_enabled: no
 nginx_context_proxy_pass_location_try_files_override: no
