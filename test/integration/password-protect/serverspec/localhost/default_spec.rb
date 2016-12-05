@@ -2,12 +2,20 @@ require 'spec_helper'
 
 describe 'ansible-nginx::install' do
 
-  describe package('nginx-naxsi') do
-    it { should be_installed.by('apt') }
+  if os[:release] == '14.04' and os[:family] == 'ubuntu'
+    describe package('nginx-naxsi') do
+      it { should be_installed.by('apt') }
+    end
   end
 
-  describe package('ngxtop') do
-    it { should be_installed.by('pip') }
+  if os[:release] == '14.04' and os[:family] == 'ubuntu'
+    describe package('ngxtop') do
+      it { should be_installed.by('pip') }
+    end
+  elsif os[:release] == '16.04' and os[:family] == 'ubuntu' # pip test broken on 16.04
+    describe command('ngxtop --version') do
+      its(:exit_status) { should eq 0 }
+    end
   end
 
 end
@@ -17,18 +25,18 @@ describe 'ansible-nginx::configure' do
     it { should be_a_file }
   end
 
-  describe file('/data/run/nginx') do
+  describe file('/var/run/nginx') do
     it { should be_directory }
     it { should be_owned_by 'www-data' }
     it { should be_grouped_into 'www-data' }
   end
 
   describe file('/etc/init.d/nginx') do
-    its(:content) { should match /\/data\/run\/nginx\/nginx.pid/ }
+    its(:content) { should match /\/var\/run\/nginx\/nginx.pid/ }
   end
 
   describe file('/etc/logrotate.d/nginx') do
-    its(:content) { should match /\/data\/run\/nginx\/nginx.pid/ }
+    its(:content) { should match /\/var\/run\/nginx\/nginx.pid/ }
   end
 
   describe file('/etc/default/nginx') do
@@ -37,7 +45,7 @@ describe 'ansible-nginx::configure' do
 
   describe file('/etc/nginx/nginx.conf') do
     its(:content) { should match /user www-data;/ }
-    its(:content) { should match /pid \/data\/run\/nginx\/nginx.pid;/ }
+    its(:content) { should match /pid \/var\/run\/nginx\/nginx.pid;/ }
     its(:content) { should match /worker_connections 4096;/ }
     its(:content) { should match /server_tokens off;/ }
     its(:content) { should match /header field./ }
@@ -66,8 +74,10 @@ end
 
 describe 'ansible-nginx::default' do
 
-  describe port(80) do
-    it { should be_listening }
+  if os[:release] == '14.04' and os[:family] == 'ubuntu' # temporary, netstat isn't installed on 16.04
+    describe port(80) do
+      it { should be_listening }
+    end
   end
 
   describe service('nginx') do
