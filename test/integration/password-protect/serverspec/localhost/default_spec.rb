@@ -2,8 +2,10 @@ require 'spec_helper'
 
 describe 'ansible-nginx::install' do
 
-  describe package('nginx-naxsi') do
-    it { should be_installed.by('apt') }
+  if os[:release] == '14.04' and os[:family] == 'ubuntu'
+    describe package('nginx-naxsi') do
+      it { should be_installed.by('apt') }
+    end
   end
 
   describe package('ngxtop') do
