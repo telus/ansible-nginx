@@ -8,8 +8,14 @@ describe 'ansible-nginx::install' do
     end
   end
 
-  describe package('ngxtop') do
-    it { should be_installed.by('pip') }
+  if os[:release] == '14.04' and os[:family] == 'ubuntu'
+    describe package('ngxtop') do
+      it { should be_installed.by('pip') }
+    end
+  elsif os[:release] == '16.04' and os[:family] == 'ubuntu' # pip test broken on 16.04
+    describe command('ngxtop --version') do
+      its(:exit_status) { should eq 0 }
+    end
   end
 
 end
