@@ -21,6 +21,8 @@ nginx_error_log_enabled: yes
 nginx_error_log_path: "{{ nginx_log_root }}/error.log"
 nginx_error_log_critical_only: no
 
+nginx_distribution:
+  - "{% if ansible_distribution_major_version|int >= 16 %}nginx{% else %}nginx-naxsi{% endif %}"
 nginx_hide_version: yes
 nginx_naxsi_enabled: no
 nginx_attack_mitigation_enabled: no
