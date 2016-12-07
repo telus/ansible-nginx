@@ -141,6 +141,7 @@ nginx_allow_access_to_restricted_paths_from_ips: []
 
 nginx_restricted_paths_for_security:
   - /.git/
+  - /.svn/
 
 nginx_whitelist_ips_for_security: []
 
