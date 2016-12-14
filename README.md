@@ -61,7 +61,6 @@ Tunables
 * `nginx_context_proxy_host` (string) - Upstream location for proxied requests
 * `nginx_context_proxy_domain_equivalence` (string) - Rewrite cookies for one domain to another, with proxied requests.
 * `nginx_context_proxy_paths` (list) - Paths that should be proxied
-* `nginx_domain_redirect` (boolean) - This... probably does something. What is a mystery.
 * `nginx_redirects` (list) - List of things to redirect to other things.
 * `nginx_redirects_for_browser_profile_and_locale_enabled` (boolean) - Very... specific redirect rules. You probably don't have any use for this.
 * `nginx_php_virtual_context_path` (string) - If an application is served
@@ -119,7 +118,6 @@ Contributors
 ------------
 * [Chris Olstrom](https://colstrom.github.io/) | [e-mail](mailto:chris@olstrom.com) | [Twitter](https://twitter.com/ChrisOlstrom)
 * Steven Harradine
-* Aaron Pederson
 * [Aaron Pederson](https://aaronpederson.github.io) | [e-mail](mailto:aaronpederson@gmail.com) | [Twitter](https://twitter.com/GunFuSamurai)
 * Justin Scott
 * Prashant Kandathil
