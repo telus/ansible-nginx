@@ -78,8 +78,6 @@ nginx_context_proxy_paths:
   - /actions/preferences/change-locale.do
   - /actions/services/browser-profile.do
 
-nginx_domain_redirect: no
-
 nginx_redirects: no
 #  - { source: /blog, destination: '$scheme://$host/', type: permanent }
 
