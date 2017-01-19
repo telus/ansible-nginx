@@ -201,3 +201,5 @@ nginx_install_from_source_modules:
   - "{% if nginx_pagespeed_enabled %}--add-module=/tmp/ngx_pagespeed-release-{{ nginx_pagespeed_version }}-beta{% endif %}"
   - "--with-http_ssl_module"
   - "--with-http_v2_module"
+
+nginx_error_page: ""
