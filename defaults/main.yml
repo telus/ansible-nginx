@@ -202,4 +202,4 @@ nginx_install_from_source_modules:
   - "--with-http_ssl_module"
   - "--with-http_v2_module"
 
-nginx_error_page: no
+nginx_error_pages: no
