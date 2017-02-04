@@ -99,7 +99,7 @@ Tunables
 * `nginx_harden_for_wordpress` (boolean) - Harden configuration for wordpress to make it more secure
 * `nginx_pagespeed_enabled` (boolean) - Is google page speed enabled?
 * `nginx_pagespeed_modules` (list) - List of pagespeed modules to enable
-* `nginx_error_page` (list) - List of objects; `nginx_error_page.code` - space delimited list of error codes; `nginx_error_page.path` the path to show for the given error codes
+* `nginx_error_pages` (list) - List of objects; `nginx_error_page.code` - space delimited list of error codes; `nginx_error_page.path` the path to show for the given error codes
 
 Dependencies
 ------------
