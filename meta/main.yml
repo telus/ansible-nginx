@@ -1,12 +1,12 @@
 ---
 dependencies:
-  - role: telusdigital.apt-repository
+  - src: telusdigital.apt-repository
     repository_key: "0xb9316a7bc7917b12"
     repository_url: "deb http://ppa.launchpad.net/chris-lea/nginx-devel/ubuntu {{ ansible_distribution_release }} main"
-  - role: telusdigital.logrotate
+  - src: telusdigital.logrotate
     logrotate_name: nginx
     logrotate_create_logs_with_owner: "{{ nginx_user }}"
-  - role: telusdigital.python
+  - src: telusdigital.python
 galaxy_info:
   author: 'Chris Olstrom'
   company: 'TELUS digital'
