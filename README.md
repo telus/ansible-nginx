@@ -34,6 +34,8 @@ Tunables
 * `nginx_passenger_enabled` (boolean) - Enable passenger for Ruby apps?
 * `nginx_php_enabled` (boolean) - Pass requests for PHP files to php-fpm?
 * `php_fpm_socket_path` (string) - Path to socket for php-fpm
+* `nginx_server_names` (string) - Defaults to `nginx_server_name: localhost`, this allows it to be iterated.
+* `nginx_server_names_hash_bucket_size` (integer) - Allows for longer nginx_server_names (32|64|128)
 * `nginx_ssl_port` (integer) - The default secure port nginx will listen on
 * `nginx_ssl_disabled` (boolean) - Redirect HTTPS to HTTP
 * `nginx_ssl_enforced` (boolean) - Redirect HTTP to HTTPS
