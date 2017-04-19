@@ -3,6 +3,9 @@ nginx_port: 80
 nginx_user: www-data
 nginx_group: www-data
 nginx_server_name: localhost
+nginx_server_names:
+  - "{{ nginx_server_name }}"
+nginx_server_names_hash_bucket_size: 32
 nginx_worker_processes: "{{ ansible_processor_vcpus }}"
 nginx_worker_connections: 4096
 nginx_runtime_root: "{{ runtime_root | default('/var/run') }}/nginx"
