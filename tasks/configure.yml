@@ -120,6 +120,18 @@
   tags:
     - nginx
 
+- name: Upload Config | nginx | Deployment
+  template:
+    src: "etc/nginx/sites-available/deployment.conf"
+    dest: "/etc/nginx/sites-available/deployment.conf"
+    owner: root
+    group: staff
+    mode: 0664
+  when: nginx_php_enabled | bool
+  notify: Reload Service | nginx
+  tags:
+    - nginx
+
 - name: Enable Config | nginx | Standard
   file:
     state: link
