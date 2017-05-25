@@ -145,7 +145,7 @@ nginx_restricted_paths_for_security:
 
 nginx_whitelist_ips_for_security: []
 
-nginx_harden_for_wordpress: yes
+nginx_harden_for_wordpress: "{% if environment_tier in ['development'] %}no{% else %}yes{% endif %}"
 nginx_harden_for_wordpress_pattern: "^/(wp-admin|wp-login.php)"
 
 nginx_configuration_name: site
