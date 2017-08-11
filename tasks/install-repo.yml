@@ -18,3 +18,8 @@
     - nginx
     - software-installation
     - using-pip
+
+- name: Create File | preferences.d/libssl
+  template:
+    src: etc/apt/preferences.d/nginx-naxsi
+    dest: /etc/apt/preferences.d/nginx-naxsi
