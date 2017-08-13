@@ -10,8 +10,3 @@
 - name: Include install from source
   include: install-source.yml
   when: nginx_install_from_source | bool
-
-- name: Create File | preferences.d/nginx-naxsi
-  template:
-    src: etc/apt/preferences.d/nginx-naxsi
-    dest: /etc/apt/preferences.d/nginx-naxsi
