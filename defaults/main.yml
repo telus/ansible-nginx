@@ -67,6 +67,7 @@ nginx_auth_location: /data/www/auth
 nginx_auth_username: digital
 nginx_auth_salt: apr1
 
+nginx_fastcgi_params: /etc/nginx/fastcgi_params
 nginx_fastcgi_buffers_number: 8
 nginx_fastcgi_buffers_size: 8k
 nginx_fastcgi_buffers: "{{ nginx_fastcgi_buffers_number }} {{ nginx_fastcgi_buffers_size }}"

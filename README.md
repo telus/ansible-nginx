@@ -55,6 +55,7 @@ Tunables
 * `nginx_auth_location` (string) - Path to auth file?
 * `nginx_auth_username` (string) - Username for auth?
 * `nginx_auth_salt` (string) - Salt for auth password?
+* `nginx_fastcgi_params` (string) - Path of the fastcgi params include
 * `nginx_fastcgi_buffers` (string) - Buffer size for FastCGI requests
 * `nginx_context_proxy_enabled` (boolean) - Proxy requests for specific context paths?
 * `nginx_context_proxy_pass_location_try_files_override` (boolean) - Disable default location try_files if proxy context_path conflicts?
